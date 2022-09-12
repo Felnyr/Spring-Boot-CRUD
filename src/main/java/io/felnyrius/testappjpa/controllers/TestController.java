@@ -66,8 +66,6 @@ public class TestController {
     public String deleteTest(@PathVariable(name = "testId") int eId) {
 
         TestDTO tempTest = this.testRepo.findById(eId);
-        System.out.println("Found");
-        System.out.println(tempTest);
 
         if (tempTest == null) {
             throw new RuntimeException("Test id not found - " + eId);
