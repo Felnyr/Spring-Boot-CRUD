@@ -1,21 +1,23 @@
 package io.felnyrius.testappjpa.controllers;
 
 import io.felnyrius.testappjpa.models.TestDTO;
+import io.felnyrius.testappjpa.repositories.TestRepository2;
 import io.felnyrius.testappjpa.repositories.TestRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
 public class TestController {
 
     //Inject tests DAO
-    private final TestRepositoryImpl testRepo;
+    private final TestRepository2 testRepo;
 
     @Autowired
-    public TestController(TestRepositoryImpl testRepo) {
+    public TestController(TestRepository2 testRepo) {
         this.testRepo = testRepo;
     }
 
@@ -27,11 +29,10 @@ public class TestController {
 
     // Add mapping for GET /tests/{testId}
     @GetMapping("/tests/{testId}")
-    public TestDTO getTest(@PathVariable(name = "testId") int tId) {
+    public Optional<TestDTO> getTest(@PathVariable(name = "testId") int tId) {
 
-        TestDTO testDTO = this.testRepo.findById(tId);
-
-        if (testDTO == null) {
+        Optional<TestDTO> testDTO = this.testRepo.findById(tId);
+        if (testDTO.isEmpty()) {
             throw new RuntimeException("Test id not found - " + tId);
         }
 
@@ -45,8 +46,9 @@ public class TestController {
         // just in case user pass an id in JSON, set id to 0
         // This is to force a save of new item instead of update
 
-        test.setId(0);
-
+//        test.setId(0);
+        Long howMany = this.testRepo.count();
+        System.out.println(howMany);
         this.testRepo.save(test);
 
         return test;
@@ -65,9 +67,9 @@ public class TestController {
     @DeleteMapping("/tests/{testId}")
     public String deleteTest(@PathVariable(name = "testId") int eId) {
 
-        TestDTO tempTest = this.testRepo.findById(eId);
+        Optional<TestDTO> tempTest = this.testRepo.findById(eId);
 
-        if (tempTest == null) {
+        if (tempTest.isEmpty()) {
             throw new RuntimeException("Test id not found - " + eId);
         }
 

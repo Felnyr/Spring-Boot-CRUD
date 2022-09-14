@@ -21,8 +21,7 @@ public class TestDTO {
 
     }
 
-    public TestDTO(int id, String name, int age) {
-        this.id = id;
+    public TestDTO(String name, int age) {
         this.name = name;
         this.age = age;
     }

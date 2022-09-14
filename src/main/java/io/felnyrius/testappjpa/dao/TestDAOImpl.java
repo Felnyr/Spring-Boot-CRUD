@@ -50,7 +50,7 @@ public class TestDAOImpl implements TestDAO {
     public void save(TestDTO theTest) {
         // Get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
-
+//        currentSession.save(theTest);
         // Save employee
         currentSession.saveOrUpdate(theTest);
     }
