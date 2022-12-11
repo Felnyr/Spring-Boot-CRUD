@@ -1,6 +1,6 @@
-package io.felnyrius.testappjpa.repositories;
+package io.felnyrius.testappjpa.Test.repositories;
 
-import io.felnyrius.testappjpa.models.TestDTO;
+import io.felnyrius.testappjpa.Test.models.TestDTO;
 
 import java.util.List;
 

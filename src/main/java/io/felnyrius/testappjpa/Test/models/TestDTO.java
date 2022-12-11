@@ -1,4 +1,4 @@
-package io.felnyrius.testappjpa.models;
+package io.felnyrius.testappjpa.Test.models;
 
 import javax.persistence.*;
 

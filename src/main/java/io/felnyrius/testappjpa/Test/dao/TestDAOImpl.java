@@ -1,6 +1,6 @@
-package io.felnyrius.testappjpa.dao;
+package io.felnyrius.testappjpa.Test.dao;
 
-import io.felnyrius.testappjpa.models.TestDTO;
+import io.felnyrius.testappjpa.Test.models.TestDTO;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;

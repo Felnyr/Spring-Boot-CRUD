@@ -1,7 +1,7 @@
-package io.felnyrius.testappjpa.repositories;
+package io.felnyrius.testappjpa.Test.repositories;
 
-import io.felnyrius.testappjpa.dao.TestDAOImpl;
-import io.felnyrius.testappjpa.models.TestDTO;
+import io.felnyrius.testappjpa.Test.models.TestDTO;
+import io.felnyrius.testappjpa.Test.dao.TestDAOImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
