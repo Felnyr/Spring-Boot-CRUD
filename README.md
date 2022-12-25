@@ -1,4 +1,4 @@
-# Project Title
+# App-jpa
 
 Simple overview of use/purpose.
 
@@ -7,25 +7,29 @@ Simple overview of use/purpose.
 An in-depth paragraph about your project and overview of use.
 
 ## Getting Started
-
 ### Dependencies
+* if you want to run locally you need Java 17 and Maven.
+* To build and run image via docker you need to install docker CLI on your machine.
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+### Build docker image
 
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
+inside the project path run:
 ```
-code blocks for commands
+docker build . -t io.felnyrius.app-jpa:0.0.1
 ```
 
+### Run docker image
+
+Run the below command in terminal
+```
+docker run -p 8080:8080 io.felnyrius.app-jpa:0.0.1
+```
+Test the program in postman/browser
+
+http://localhost:8080/api/tests
+
+##Swagger Documentation
+http://localhost:8080/swagger-ui/
 ## Help
 
 Any advise for common problems or issues.
@@ -44,7 +48,7 @@ author@xxx.com or twitter
 * 0.2
     * Various bug fixes and optimizations
     * See [commit change]() or See [release history]()
-* 0.1
+* 0.0.1
     * Initial Release
 
 ## License
