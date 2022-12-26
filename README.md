@@ -33,14 +33,14 @@ http://localhost:8080/swagger-ui/
 
 ## Help
 
-Any advise for common problems or issues.
+Any advice for common problems or issues.
 ```
 command to run if program contains helper info
 ```
 
 ## Authors
 
-Contributors names and contact info
+Contributor names and contact info
 
 author@xxx.com or twitter
 
