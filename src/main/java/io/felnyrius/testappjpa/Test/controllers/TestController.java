@@ -1,6 +1,7 @@
 package io.felnyrius.testappjpa.Test.controllers;
 
 import io.felnyrius.testappjpa.Test.models.TestDTO;
+import io.felnyrius.testappjpa.Test.repositories.Test;
 import io.felnyrius.testappjpa.Test.repositories.TestRepository2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
