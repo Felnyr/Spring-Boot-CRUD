@@ -8,6 +8,14 @@ import java.util.List;
 
 @Repository
 public interface SimpleRespository extends JpaRepository<SimpleDto, Integer> {
+    // Native SQL Query
     @Query(value = "SELECT * FROM simple WHERE simple.age > 5", nativeQuery = true)
     List<SimpleDto> getAgeMoreThan5();
+
+    // JPQL Query
+    @Query("SELECT a FROM SimpleDto a WHERE a.text = ?1")
+    List<SimpleDto> getSimpleByText(String text);
+
+
+
 }

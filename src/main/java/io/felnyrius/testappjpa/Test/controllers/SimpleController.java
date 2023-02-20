@@ -28,4 +28,14 @@ public class SimpleController {
     SimpleDto addSimple(@RequestBody SimpleDto simpleDto){
         return simpleRepo.save(simpleDto);
     }
+
+    @GetMapping("/more5")
+    List<SimpleDto> getAgeMoreThan5(){
+        return simpleRepo.getAgeMoreThan5();
+    }
+
+    @GetMapping("/text")
+    List<SimpleDto> getByText(@RequestParam String text) {
+        return simpleRepo.getSimpleByText(text);
+    }
 }

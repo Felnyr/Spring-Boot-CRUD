@@ -22,4 +22,7 @@ public class SimpleDto {
 
     @Column(name = "text")
     String text;
+
+    @Column(name = "age")
+    Integer age;
 }
