@@ -1,4 +1,4 @@
-# App-jpa
+# Spring-Boot-Crud
 
 Simple overview of use/purpose.
 
@@ -28,6 +28,27 @@ Test the program in postman/browser
 
 http://localhost:8080/api/tests
 
+### Run docker-compose (api + mySql)
+To run app with sql database on docker:
+1. Build the application via maven: mvn clean install
+```
+mvn clean install
+```
+
+2. in application properties change profile to:
+```
+spring.profiles.active=devSql
+```
+3. in root project directory type:
+```
+docker-compose up --build
+```
+This command will build the docker image from Dockerfile and then run docker compose
+to run the api and sql database.
+4. Test the program in postman/browser
+   http://localhost:8000/api/tests
+
+
 ## Swagger Documentation
 http://localhost:8080/swagger-ui/
 
@@ -42,7 +63,7 @@ command to run if program contains helper info
 
 Contributor names and contact info
 
-author@xxx.com or twitter
+author@website.com or twitter
 
 ## Version History
 
