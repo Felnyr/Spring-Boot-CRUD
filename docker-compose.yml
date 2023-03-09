@@ -2,13 +2,21 @@ version: "3.9"
 services:
   spring-api:
     container_name: spring-api
+    depends_on:
+      - mysql
+#    env_file: ./.env
     build: . # build from Dockerfile in current directory
     image: spring-boot-crud
     ports:
       - "8000:8080"
+#    environment:
+#      MYSQL_HOST: mysql
+
 
   mysql:
     container_name: spring-mysql
+
+#    env_file: ./.env
     image: mysql
     restart: always
     environment:
